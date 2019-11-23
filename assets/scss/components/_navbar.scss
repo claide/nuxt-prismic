@@ -1,0 +1,82 @@
+.navbar {
+  background-color: var(--background-color);
+}
+
+.navbar-brand {
+  @media (max-width: 768px) {
+    margin-left: auto;
+  }
+  .navbar-item {
+    transition: color 0.5s;
+    font-weight: bold;
+  }
+  a {
+    &.navbar-item {
+      &:hover {
+        color: var(--dark-color);
+      }
+
+      &:focus {
+        color: var(--dark-color);
+      }
+    }
+  }
+
+  .navbar-item.is-hidden-desktop {
+    @media (max-width: 768px) {
+      margin-left: auto;
+    }
+  }
+}
+
+.navbar-burger {
+  color: var(--dark-color);
+  span {
+    height: 2px;
+    width: 22px;
+    left: calc(50% - 11px);
+    background-color: var(--dark-color);
+  }
+
+  &:hover {
+    background-color: transparent;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
+}
+
+.navbar-burger span:nth-child(1) {
+  top: calc(55% - 11px);
+  width: 27px;
+}
+
+.navbar-burger span:nth-child(2) {
+  top: calc(55% - -2px);
+}
+
+a {
+  &.navbar-item,
+  &.navbar-burger,
+  &.menu-link {
+    border: 0;
+  }
+}
+
+.navbar-item {
+  color: var(--font-color);
+}
+
+.menu-list {
+  a {
+    color: var(--modal-content) !important;
+    transition: color 0.5s;
+    &:hover {
+      color: var(--primary-color) !important;
+    }
+    &.nuxt-link-exact-active {
+      color: var(--primary-color) !important;
+    }
+  }
+}

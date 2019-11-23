@@ -1,0 +1,25 @@
+{
+  "name": "francis-magallen",
+  "version": "1.0.0",
+  "description": "Front-end Developer & UI/UX Designer based in Davao City, PH.",
+  "author": "Francis Magallen",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/google-analytics": "^2.2.1",
+    "bulma": "^0.8.0",
+    "nuxt": "^2.0.0",
+    "prismic-javascript": "^2.1.1",
+    "prismic-vue": "https://github.com/prismicio/prismic-vue.git#nuxt",
+    "vue-backtotop": "^1.6.1"
+  },
+  "devDependencies": {
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0"
+  }
+}

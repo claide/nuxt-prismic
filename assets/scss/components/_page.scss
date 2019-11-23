@@ -1,0 +1,61 @@
+h2 {
+  line-height: 1.5;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.page {
+  margin-top: 5rem;
+}
+
+.page-overview {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.profile-image {
+  max-width: 488px;
+  margin: 0 auto;
+  // box-shadow: 0 0 0 1px rgba(6, 44, 82, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 6px 0px,
+    rgba(0, 0, 0, 0.16) 0px 2px 32px 0px;
+
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.section-narrow {
+  @media (min-width: 1025px) {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+}
+
+.is-centered-copy {
+  p {
+    text-align: center;
+    color: var(--dark-color) !important;
+    line-height: 1.5;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  @media (min-width: 1025px) {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+}
+
+.work-sample {
+  h4 {
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+  }
+
+  img {
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 1px 6px 0px,
+      rgba(0, 0, 0, 0.16) 0px 2px 32px 0px;
+    border-radius: 5px;
+  }
+}

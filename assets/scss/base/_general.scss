@@ -1,0 +1,249 @@
+html {
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  background-color: var(--background-color);
+}
+
+.theme-light {
+  --background-color: #ffffff;
+  --font-color: #4e4e50;
+  --dark-color: #090910;
+  --modal-bg-color: #090910;
+  --footer-color: #fafafa;
+  --back-top: #f5f5f5;
+  --modal-close-color: #ffffff;
+  --modal-content: #ffffff;
+  --primary-color: #ffbb03;
+  --grey-color: #7a7a7a;
+}
+.theme-dark {
+  --background-color: #161625;
+  --font-color: #ffffff;
+  --dark-color: #e1e1ff;
+  --footer-color: #161625;
+  --back-top: #4e4e50;
+  --modal-close-color: #090910;
+  --modal-bg-color: #ffffff;
+  --modal-content: #161625;
+  --primary-color: #ffbb03;
+  --grey-color: #dbdbdb;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  color: var(--dark-color);
+  line-height: 40px;
+  -webkit-font-smoothing: antialiased;
+}
+
+p {
+  margin-bottom: 1em;
+  font-family: "Open Sans", sans-serif;
+  color: var(--font-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+h1 {
+  // font-size: 40px;
+  font-size: 3rem;
+  font-weight: normal;
+  line-height: 4rem;
+}
+
+h3 {
+  font-size: 28px;
+  color: var(--font-color);
+}
+
+h4 {
+  font-weight: normal;
+  font-size: 24px;
+}
+
+a {
+  color: var(--font-color);
+  border-bottom: 1px solid var(--font-color);
+  padding-bottom: 3px;
+
+  &:hover {
+    color: $black;
+    border-bottom: 1px solid $black;
+  }
+}
+
+.container {
+  @media (min-width: 1408px) {
+    max-width: 1200px;
+  }
+}
+
+.p-tag {
+  font-weight: normal;
+  font-family: "Open Sans", sans-serif;
+}
+
+.reverse-row {
+  flex-direction: row-reverse;
+}
+
+.reverse-column-m {
+  @media (max-width: 769px) {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.section {
+  @media (min-width: 1024px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.is-spacing-lg {
+  margin-top: 140px;
+  margin-bottom: 90px;
+
+  @media (max-width: 769px) {
+    margin: 0;
+  }
+}
+
+.is-spacing-md {
+  margin-top: 90px;
+  margin-bottom: 50px;
+
+  @media (max-width: 769px) {
+    margin: 0;
+  }
+}
+
+.image {
+  border-radius: 5px;
+}
+
+.is-link,
+a {
+  color: var(--font-color);
+  border-bottom: 1px solid var(--font-color);
+
+  &:hover {
+    color: var(--dark-color);
+    border-bottom: 1px solid var(--dark-color);
+  }
+}
+
+.modal-background {
+  background-color: var(--modal-bg-color);
+}
+
+.modal-content {
+  color: var(--modal-content);
+  overflow: hidden;
+  position: relative;
+
+  @media (min-width: 1408px) {
+    max-width: 1200px;
+    width: 100%;
+  }
+}
+
+.modal-close::before,
+.modal-close::after {
+  background-color: var(--modal-close-color);
+}
+
+.back_to_top {
+  position: fixed;
+  bottom: 17.5em;
+  right: 12em;
+  z-index: 9999;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background: var(--back-top);
+  color: var(--font-color);
+  cursor: pointer;
+  border-radius: 2px;
+  border: 0;
+
+  &:hover {
+    border: 0;
+  }
+
+  @media (max-width: 768px) {
+    bottom: 4em;
+    right: 1em;
+  }
+}
+
+.footer {
+  background-color: var(--footer-color);
+}
+
+.button {
+  &.is-text {
+    text-decoration: none;
+  }
+}
+
+.has-text-grey {
+  color: var(--grey-color) !important;
+}
+
+.columns:not(:last-child) {
+  margin-bottom: calc(1.5rem - 0.5rem);
+}
+
+.footer {
+  padding-bottom: 3rem;
+
+  a {
+    color: var(--grey-color);
+
+    &:hover {
+      color: var(--dark-color);
+    }
+  }
+
+  .footer-col-title {
+    margin-bottom: 0.8em;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .footer-copy {
+    font-size: 16px;
+    color: var(--grey-color);
+  }
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-duration: 400ms;
+}
+.page-enter,
+.page-leave-to {
+  opacity: 0;
+}
+
+.fadeText-enter-active,
+.fadeText-leave-active {
+  transition: all 0.5s ease-out;
+}
+.fadeText-enter,
+.fadeText-leave-to {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  transform: translate(0%, 100%);
+}
