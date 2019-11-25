@@ -1,0 +1,13 @@
+@import '~bulma/sass/utilities/_all';
+
+$primary: #ffbb03;
+$primary-invert: findColorInvert($primary);
+
+$colors: (
+  'primary': (
+    $primary,
+    $primary-invert
+  )
+);
+
+@import '~bulma/bulma.sass';
