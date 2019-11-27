@@ -41,7 +41,14 @@ export default {
         content: "A Front-end & UI Developer based in Davao City, Philippines"
       }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "stylesheet",
+        href:
+          "https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,700&display=swap"
+      }
+    ],
     script: [
       {
         innerHTML:
