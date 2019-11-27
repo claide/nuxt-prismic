@@ -66,7 +66,6 @@ export default {
   async asyncData({ context, error, req }) {
     try {
       const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
-
       // Query to get work page content
       const document = await api.getSingle("work");
       let workContent = document.data;
