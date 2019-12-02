@@ -73,7 +73,7 @@ export default {
       // Query work posts
       const workPosts = await api.query(
         Prismic.Predicates.at("document.type", "work-post"),
-        { orderings: "[document.last_publication_date]" }
+        { orderings: "[document.last_publication_date desc]" }
       );
 
       // Load the edit button
