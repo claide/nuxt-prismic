@@ -41,6 +41,7 @@ export default {
         content: "A Front-end & UI Developer based in Davao City, Philippines"
       }
     ],
+<<<<<<< HEAD
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
       {
@@ -49,6 +50,9 @@ export default {
           "https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,700&display=swap"
       }
     ],
+=======
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+>>>>>>> 566367cf0cbc4e944324c4529b71806eb59a12b9
     script: [
       {
         innerHTML:
@@ -67,6 +71,24 @@ export default {
   /*
    ** Global CSS
    */
+<<<<<<< HEAD
+=======
+  /** ADD THIS BLOCK **/
+  /*
+   ** Customize the generated output folder
+   */
+  generate: {
+    dir: "public"
+  },
+
+  /*
+   ** Customize the base url
+   */
+  router: {
+    base: "/nuxt-prismic/" //this is whatever the project is named
+  },
+  /** END BLOCK **/
+>>>>>>> 566367cf0cbc4e944324c4529b71806eb59a12b9
   css: [],
   /*
    ** Plugins to load before mounting the App

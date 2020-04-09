@@ -12,9 +12,7 @@
       <ul class="content-exp">
         <li v-for="contentExp in contentExps" :key="contentExp.id">
           <p class="is-size-5 exp-title">{{ contentExp.job_title[0].text }}</p>
-          <p class="is-size-6 has-text-grey">
-            {{ contentExp.date_range[0].text }}
-          </p>
+          <p class="is-size-6 has-text-grey">{{ contentExp.date_range[0].text }}</p>
         </li>
       </ul>
     </section>

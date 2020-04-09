@@ -78,7 +78,6 @@ export default {
         linkResolver,
         htmlSerializer
       );
-
       const about = PrismicDOM.RichText.asHtml(document.about_me);
       const workSlices = document.body;
 
