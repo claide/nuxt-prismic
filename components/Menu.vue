@@ -69,12 +69,17 @@ export default {
       var apiEndpoint = "https://personal-api.cdn.prismic.io/api/v2";
 
       Prismic.getApi(apiEndpoint, { req: req })
-        .then(function(api) {
+        .then(api => {
           return api.query(Prismic.Predicates.at("document.type", "work-post"));
         })
         .then(
-          function(response) {
-            _this.works = response.results;
+          response => {
+            let workResults = response.results.sort(
+              (a, b) =>
+                new Date(b.last_publication_date).getTime() -
+                new Date(a.last_publication_date).getTime()
+            );
+            _this.works = workResults;
           },
           function(err) {
             console.log("Something went wrong: ", err);

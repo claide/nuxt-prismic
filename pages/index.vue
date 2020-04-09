@@ -17,22 +17,13 @@
     <!-- Begin sample works section -->
     <section class="section work-sample">
       <div class="columns is-variable is-8-widescreen">
-        <div class="column">
-          <nuxt-link :to="'/work/' + f100d.uid">
+        <div v-for="featuredProject in featuredProjects" :key="featuredProject.id" class="column">
+          <nuxt-link :to="'/work/' + featuredProject.uid">
             <figure class="image">
-              <img :src="f100d.data.image.url" alt />
+              <img :src="featuredProject.data.image.url" alt />
             </figure>
-            <h4>{{ f100d.data.title[0].text }}</h4>
-            <p>{{ f100d.data.description[0].text | truncate(125) }}</p>
-          </nuxt-link>
-        </div>
-        <div class="column">
-          <nuxt-link :to="'/work/' + pwave.uid">
-            <figure class="image">
-              <img :src="pwave.data.image.url" alt />
-            </figure>
-            <h4>{{ pwave.data.title[0].text }}</h4>
-            <p>{{ pwave.data.description[0].text | truncate(125) }}</p>
+            <h4>{{ featuredProject.data.title[0].text }}</h4>
+            <p>{{ featuredProject.data.description[0].text | truncate(125) }}</p>
           </nuxt-link>
         </div>
       </div>
@@ -73,9 +64,12 @@ export default {
       const result = await api.getSingle("homepage");
       document = result.data;
 
-      // query two work post
-      const f100d = await api.getByUID("work-post", "first-100-days");
-      const pwave = await api.getByUID("work-post", "performance-wave");
+      // query featured projects
+      const featuredProjects = await api
+        .query(Prismic.Predicates.at("document.tags", ["featured"]))
+        .then(response => {
+          return response.results;
+        });
 
       const title = PrismicDOM.RichText.asText(document.title);
       const desc = PrismicDOM.RichText.asText(document.summary);
@@ -84,6 +78,7 @@ export default {
         linkResolver,
         htmlSerializer
       );
+
       const about = PrismicDOM.RichText.asHtml(document.about_me);
       const workSlices = document.body;
 
@@ -96,8 +91,7 @@ export default {
         desc,
         about,
         workSlices,
-        f100d,
-        pwave,
+        featuredProjects,
         documentId: result.id
       };
     } catch (e) {

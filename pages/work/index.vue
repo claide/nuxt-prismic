@@ -66,14 +66,19 @@ export default {
   async asyncData({ context, error, req }) {
     try {
       const api = await Prismic.getApi(PrismicConfig.apiEndpoint, { req });
+
       // Query to get work page content
       const document = await api.getSingle("work");
       let workContent = document.data;
 
-      // Query work posts
       const workPosts = await api.query(
-        Prismic.Predicates.at("document.type", "work-post"),
-        { orderings: "[document.last_publication_date desc]" }
+        Prismic.Predicates.at("document.type", "work-post")
+      );
+
+      const workResults = workPosts.results.sort(
+        (a, b) =>
+          new Date(b.last_publication_date).getTime() -
+          new Date(a.last_publication_date).getTime()
       );
 
       // Load the edit button
@@ -82,7 +87,7 @@ export default {
       return {
         workContent,
         documentId: document.id,
-        works: workPosts.results
+        works: workResults
       };
     } catch (e) {
       error({ statusCode: 404, message: "Page not found" });
