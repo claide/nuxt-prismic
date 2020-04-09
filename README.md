@@ -1,6 +1,10 @@
 # nuxt-prismic
 
-> My slick Nuxt.js project
+> My personal website
+
+## Website
+
+[www.francismagallen.com](http://www.francismagallen.com/)
 
 ## Build Setup
 
