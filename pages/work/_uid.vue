@@ -4,6 +4,13 @@
       <h1>{{ $prismic.richTextAsPlain(document.title) }}</h1>
       <br />
       <p>{{ $prismic.richTextAsPlain(document.description) }}</p>
+      <p v-if="document.work_link.hasOwnProperty('url')">
+        Website link :
+        <a
+          :href="document.work_link.url"
+          :target="document.work_link.target"
+        >{{ document.work_link.url }}</a>
+      </p>
       <div class="tags">
         <span
           class="tag is-primary"
